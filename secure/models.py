@@ -2,8 +2,8 @@
 # python 3
 # noinspection PyCompatibility
 from urllib.parse import urlparse, urlunparse, urljoin
-from helper import TimedSerializer, SignatureExpired, BadSignature
-from webservice.exceptions import BadRequest, WebserviceError
+from .helper import TimedSerializer, SignatureExpired, BadSignature
+from .exceptions import BadRequest, WebserviceError
 
 
 PUBLIC_KEY_HEADER = 'x-services-public-key'

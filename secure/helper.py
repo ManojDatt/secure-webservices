@@ -371,13 +371,20 @@ class TimestampSigner(Signer):
         """
         return datetime.utcfromtimestamp(ts + EPOCH)
 
+    # def sign(self, value):
+    #     """Signs the given string and also attaches a time information."""
+    #     value = want_bytes(value)
+    #     timestamp = base64_encode(int_to_bytes(self.get_timestamp()))
+    #     sep = want_bytes(self.sep)
+    #     value = value + sep + timestamp
+    #     return value + sep + self.get_signature(value)
     def sign(self, value):
         """Signs the given string and also attaches a time information."""
         value = want_bytes(value)
         timestamp = base64_encode(int_to_bytes(self.get_timestamp()))
         sep = want_bytes(self.sep)
         value = value + sep + timestamp
-        return value + sep + self.get_signature(value)
+        return timestamp + sep + self.get_signature(value)
 
     def unsign(self, value, max_age=None, return_timestamp=False):
         """Works like the regular :meth:`~Signer.unsign` but can also

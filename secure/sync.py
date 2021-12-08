@@ -1,6 +1,6 @@
 import requests
 
-from webservice.models import BaseConsumer
+from .models import BaseConsumer
 
 class SyncConsumer(BaseConsumer):
     def __init__(self, base_url, public_key, private_key):
