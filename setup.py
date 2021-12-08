@@ -7,8 +7,8 @@ project_var_name = "secure-webservices"
 here = os.path.dirname(__file__)
 packages = find_packages()
 setup(
-    name="secure-webservices",
-    version="1.1.2",
+    name="secure_webservices",
+    version="1.1.3",
     author="manojdatt1it",
     author_email="manojdatt1it@gmail.com",
     description="A wrapper tool that allow to enable auth service implementation works like SSO, creating your server and clients",
